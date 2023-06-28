@@ -1,0 +1,51 @@
+March 4, 2016: 
+	changed code to aggregate indels inside the mapping script
+	changed format of indel track file to wig style to reduce size
+	
+	added convenience script to dump original fasta from region
+	adding right shifts of indel calls during mapping to ensure 'easy' indel calls in homopolymers
+
+...
+March 28, 2016
+	no realignment step - now flagging and reassembling the original set of reads
+	skip alignment are flagged in addition to indels
+March 29, 2016
+	added graph spanning from tail to head in addition to head to tail for non-spanning graphs
+	removal of poorly supported edges
+March 30, 2016
+	reads are kept in memory to be able to attempt adaptive k-mer size implementation
+April 29, 2016
+	keep track of skip flags separately from indel flags, try to use read id info to adjust active region boundaries
+May 6, 2016
+	added version of de Bruijn graph script to assemble reads with unknown orientation
+	added flag to use that same script to do assembly from anchored reads and non-anchored ones
+	reduced coverage stringency to retain precious reads spanning RE site
+May 21, 2016
+	dump and igv process preliminary reconstruction
+	list of sam files rather than a single sam file
+	add reference as a read. Accept high-confidence reconstruction if supported by at least one read and reference and low-confidence if one read (?)
+	keep track in map of the nucleotide seen in the reference
+	print basic stats for output including contig N50
+May 22, 2016
+	gaps dumped from local reference
+	adjust notation and scripts to allow proper handling of local reference with different region flag trigger modes
+May 23, 2016
+	added stand-alone scripts to generate chain files and liftover bed annotations. Does not seem to be as useful as I hoped for
+May 24, 2016
+	commented out liftover track in reconstruction
+	
+	
+June 11, 2016
+	starting adapting to uger and slurm clusters
+June 14, 2016
+	changed preliminary set to do indexing together with length analysis
+	indexing for partitioned fasta added
+	TODO: now needs absolute paths, edit so that can take relative paths to multiple files
+	
+Oct, 2017
+	rewrote in global positioning system, gnu parallel multithreading in favor of cluster management 
+	
+Nov 20, 2017
+	added clip filtering
+	trying weighted mapq
+	command log print
